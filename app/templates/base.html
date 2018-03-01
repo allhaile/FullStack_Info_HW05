@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 
 <!-- how to extend header to other templates -->
-  
+{% block header %}  
     <div id="site-title-wrapper">
       <div href=# id="site-icon-wrapper">
         <img src="https://cdn.smassets.net/wp-content/uploads/2017/05/CR1651_meet_goldie_v2.2kk.png">
@@ -18,10 +18,8 @@
     </div>
     
   </head>
-  <header>
-{% block header %}
 {% endblock %}
-</header>
+
   <body>
     {% block body %}
     {% endblock %}

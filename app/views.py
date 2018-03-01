@@ -48,6 +48,11 @@ def submitSurvey():
 
         surveyResponse['fe-before'] = request.form.get('feBefore')
         surveyResponse['fe-after'] = request.form.get('feAfter')
+
+        if surveyResponse['fe-after'] < surveyResponse['fe-before']:
+            surveyResponse['results'] = "Bummer, not much improvement. No worries let's keep learning!"
+        else:
+            surveyResponse['results'] = "Awesome! You've improved! Let's keep learning!"
         return render_template('results.html', surveyResponse=surveyResponse, name=username) # pass in variables to the template
     else:
         return render_template('login.html')
